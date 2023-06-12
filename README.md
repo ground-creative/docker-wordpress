@@ -28,6 +28,12 @@ sudo nano /etc/hosts
 	
 ## Uploads.ini file example
 
+add the volume to the docekr-compose.yml file
+```
+ volumes:
+	- ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+```
+Create a file called uploads.ini and place it in the config folder
 ```
 file_uploads = On
 memory_limit = 64M

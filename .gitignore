@@ -7,14 +7,11 @@
 # exclude everything in www
 www/*
 
-# exception to the rule
-#!somefolder/README.md
-
 # exclude everything in config
 config/*
 
+# include these files
 !README.md
-
 !.gitignore
 !.gitalias
 !.gitattributes
