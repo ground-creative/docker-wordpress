@@ -35,7 +35,7 @@ services:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     environment:
-      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_HOST: db:${WORDPRESS_DB_PORT}
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
@@ -51,7 +51,7 @@ services:
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
     environment:
-      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_HOST: db:${WORDPRESS_DB_PORT}
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
@@ -65,7 +65,7 @@ services:
     environment:
       # https://docs.phpmyadmin.net/en/latest/setup.html#docker-environment-variables
       PMA_HOST: db
-      PMA_PORT: 3306
+      PMA_PORT: ${WORDPRESS_DB_PORT}
       UPLOAD_LIMIT: 50M
     restart: always
     ports:

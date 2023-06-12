@@ -19,7 +19,7 @@ sudo ./build.sh
 
 	http://{hostname}:{port}
 	
-5) (Optional) Add hostname entry that u used in .env file to hosts file:
+5) (Optional) Add hostname entry that u used in .env file to your hosts file:
 ```
 sudo nano /etc/hosts
 
