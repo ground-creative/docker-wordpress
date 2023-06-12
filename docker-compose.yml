@@ -1,0 +1,50 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: ${DOCKER_MYSQL_CONTAINER_NAME}
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${WORDPRESS_DB_USER}
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+  
+  wordpress:
+    container_name: ${DOCKER_WP_CONTAINER_NAME}
+    depends_on: [db]
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        wp_version: ${WORDPRESS_VERSION_TAG}
+        php_version: ${PHP_VERSION}
+    ports:
+      - 8080:80
+    restart: always
+    working_dir: /var/www/html
+    volumes:
+      - ./wp-content/themes:/var/www/html/wp-content/themes
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./logs:/var/www/html/logs
+      - ./error-logging.ini:/usr/local/etc/php/conf.d/error-logging.ini
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_DEBUG_DISPLAY', ${WORDPRESS_DISPLAY_ERRORS} );
+        define( 'WP_DEBUG_LOG', 'wp-content/logs/wp-debug.log' );
+
+volumes:
+  wordpress:
+  db:
