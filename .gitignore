@@ -13,7 +13,6 @@ config/*
 !config/README.md
 
 # include these files
-!README.md
 !.gitignore
 !.gitalias
 !.gitattributes
