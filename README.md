@@ -10,14 +10,7 @@ git clone https://github.com/ground-creative/docker-wordpress.git {folder-name}
 ```
 2) Make changes to the environment variables file (.env)
 
-3) Add hostname entry that u used in .env file to hosts file:
-```
-sudo nano /etc/hosts
-
-127.0.0.1 {hostname}
-```
-
-4) Run build.sh script to build containers
+3) Run build.sh script to build containers
 ```
 sudo ./build.sh
 ```
@@ -25,6 +18,13 @@ sudo ./build.sh
 4) Access the container via browser using the port and hostname specified in the .env file:
 
 	http://{hostname}:{port}
+	
+5) (Optional) Add hostname entry that u used in .env file to hosts file:
+```
+sudo nano /etc/hosts
+
+127.0.0.1 {hostname}
+```
 	
 ## Uploads.ini file example
 
