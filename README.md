@@ -28,7 +28,7 @@ sudo nano /etc/hosts
 	
 ## Uploads.ini file example
 
-add the volume to the docekr-compose.yml file
+Add the volume to the docker-compose.yml file
 ```
  volumes:
 	- ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
