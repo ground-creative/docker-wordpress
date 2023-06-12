@@ -8,7 +8,6 @@ This is the Git repo for a docker wordpress environment.
 ```
 git clone https://github.com/ground-creative/docker-wordpress.git
 ```
-
 2) Make changes to the environment variables file (.env)
 
 3) Run docker-compose to build the container
