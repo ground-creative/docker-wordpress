@@ -7,4 +7,5 @@
 # exclude everything in www
 www/*
 
-#config/*
+# exclude everything in config
+config/*
