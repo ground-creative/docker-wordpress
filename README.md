@@ -6,7 +6,7 @@ This is the Git repo for a docker wordpress environment.
 
 1) clone the repository
 ```
-git clone https://github.com/ground-creative/docker-wordpress.git
+git clone https://github.com/ground-creative/docker-wordpress.git <folder-name>
 ```
 2) Make changes to the environment variables file (.env)
 
