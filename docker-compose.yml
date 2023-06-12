@@ -31,9 +31,6 @@ services:
     volumes:
       - ./www:/var/www/html
       - ./logs/wp-debug.log:/var/www/html/wp-content/wp-debug.log
-      - ./config/error-logging.ini:/usr/local/etc/php/conf.d/error-logging.ini
-      - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-      - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     environment:
       WORDPRESS_DB_HOST: db:${WORDPRESS_DB_PORT}
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
