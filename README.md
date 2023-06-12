@@ -6,7 +6,7 @@ This is the Git repo for a docker wordpress environment.
 
 1) clone the repository
 ```
-git clone https://github.com/ground-creative/docker-wordpress.git <folder-name>
+git clone https://github.com/ground-creative/docker-wordpress.git {folder-name}
 ```
 2) Make changes to the environment variables file (.env)
 
@@ -17,6 +17,6 @@ docker-compose up -d
 
 4) Access the container via browser using the port specified in the .env file:
 
-http://localhost:<port>
+http://localhost:{port}
 
 
