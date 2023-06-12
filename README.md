@@ -17,6 +17,6 @@ docker-compose up -d
 
 4) Access the container via browser using the port specified in the .env file:
 
-http://localhost:{port}
+	http://localhost:{port}
 
 
