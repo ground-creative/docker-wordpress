@@ -3,3 +3,6 @@
 
 # ignore all ini files
 *.ini
+
+# exclude everything in www
+www/*
