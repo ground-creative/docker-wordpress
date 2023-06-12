@@ -1,30 +1,11 @@
-# LyghtLiving
+# Docker Wordpress
+
+This is the Git repo for a docker wordpress environment.
 
 ## Installation
 
-1) Backup your wordpress wp-content folder and remove the following folders:
-- themes
-- uploads
-- plugins
-- mu-plugins
-
-2) Run these commands inside your root wordpress folder:
+1) clone the repository
 ```
-git init
-git remote add origin https://<your-github-token>@github.com/ground-creative/lyghtliving.git
-git pull
-git checkout main -f
-git branch --set-upstream-to origin/main
-```
-
-## Installation (Docker)
-
-1) Run these commands inside your docker installation folder:
-```
-git init
-git remote add origin https://<your-github-token>@github.com/ground-creative/lyghtliving.git
-git pull
-git checkout main -f
-git branch --set-upstream-to origin/main
+git clone https://github.com/ground-creative/docker-wordpress.git
 ```
 
