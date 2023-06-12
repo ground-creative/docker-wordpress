@@ -7,5 +7,19 @@
 # exclude everything in www
 www/*
 
+# exception to the rule
+#!somefolder/README.md
+
 # exclude everything in config
 config/*
+
+!README.md
+
+!.gitignore
+!.gitalias
+!.gitattributes
+!.editorconfig
+!.phpcs.xml.dist
+!README.md
+!CHANGELOG.md
+!composer.json
