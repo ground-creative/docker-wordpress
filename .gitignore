@@ -6,9 +6,11 @@
 
 # exclude everything in www
 www/*
+!www/README.md
 
 # exclude everything in config
 config/*
+!config/README.md
 
 # include these files
 !README.md
