@@ -14,17 +14,17 @@ git clone https://github.com/ground-creative/docker-wordpress.git {folder-name}
 ```
 sudo ./build.sh
 ```
-
-4) Access the container via browser using the port and hostname specified in the .env file:
-
-	http://{hostname}:{port}
 	
-5) (Optional) Add the hostname entry that you used in .env file to your hosts file:
+4) Add the hostname entry that you used in .env file to your hosts file:
 ```
 sudo nano /etc/hosts
 
 127.0.0.1 {hostname}
 ```
+
+5) Access the container via browser using the port and hostname specified in the .env file:
+
+	http://{hostname}:{port}
 	
 ## Uploads.ini file example
 
@@ -33,7 +33,7 @@ Add the volume to the docker-compose.yml file
  volumes:
 	- ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 ```
-Create a file called uploads.ini and place it in the config folder
+Create a file called uploads.ini with the following content and place it in the config folder
 ```
 file_uploads = On
 memory_limit = 64M
