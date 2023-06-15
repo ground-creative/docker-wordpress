@@ -64,7 +64,7 @@ services:
     expose:
       - "80"
     environment:
-	  # change email address values
+	  # change email address value
       VIRTUAL_HOST: ${WP_CONTAINER_NAME}
       VIRTUAL_PORT: 80
       LETSENCRYPT_HOST: ${WP_CONTAINER_NAME}
