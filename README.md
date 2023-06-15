@@ -17,11 +17,11 @@ sudo chmod +x build.sh
 sudo ./build.sh
 ```
 	
-4) Add the hostname entry that you used in .env file to your hosts file:
+4) Add the container name entry that you used in .env file to your hosts file:
 ```
 sudo nano /etc/hosts
 
-127.0.0.1 {hostname}
+127.0.0.1 {container-name}
 ```
 
 5) Access the container via browser using the port and container name specified in the .env file:
@@ -47,3 +47,48 @@ max_execution_time = 600
 ## Use with nginx ssl proxy
 
 https://github.com/ground-creative/docker-nginx-proxy
+
+1) Create the file docker-compose-override.yml and paste the following:
+```
+version: '3.1'
+
+services:
+
+  db:
+    networks:
+      - proxy
+  
+  wordpress:
+    networks:
+      - proxy
+    expose:
+      - "80"
+    environment:
+	  # change email address values
+      VIRTUAL_HOST: ${WP_CONTAINER_NAME}
+      VIRTUAL_PORT: 80
+      LETSENCRYPT_HOST: ${WP_CONTAINER_NAME}
+      LETSENCRYPT_EMAIL: address@somedomain.com
+        
+  wpcli:
+    networks:
+      - proxy
+      
+  pma:
+    networks:
+      - proxy
+  
+networks:
+  proxy:
+    external:
+      name: nginx-proxy
+```
+
+2) Rebuild the container
+```
+docker-compose up -d --build
+```
+
+3) Access the container at the specified address in the VIRTUAL_HOST field
+
+	(http|https)://{VIRTUAL_HOST}
