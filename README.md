@@ -17,7 +17,7 @@ sudo chmod +x build.sh
 sudo ./build.sh
 ```
 	
-4) Add the container name entry that you used in .env file to your hosts file:
+4) Add the container name entry that you used in .env file to your hosts file
 ```
 sudo nano /etc/hosts
 
@@ -48,7 +48,7 @@ max_execution_time = 600
 
 https://github.com/ground-creative/docker-nginx-proxy
 
-1) Create the file docker-compose-override.yml and paste the following:
+1) Create the file docker-compose-override.yml and paste the following
 ```
 version: '3.1'
 
