@@ -12,6 +12,8 @@ git clone https://github.com/ground-creative/docker-wordpress.git {folder-name}
 
 3) Run build.sh script to build containers
 ```
+sudo chmod +x build.sh
+
 sudo ./build.sh
 ```
 	
@@ -22,9 +24,9 @@ sudo nano /etc/hosts
 127.0.0.1 {hostname}
 ```
 
-5) Access the container via browser using the port and hostname specified in the .env file:
+5) Access the container via browser using the port and container name specified in the .env file:
 
-	http://{hostname}:{port}
+	http://{container-name}:{port}
 	
 ## Uploads.ini file example
 
