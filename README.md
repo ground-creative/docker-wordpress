@@ -8,7 +8,7 @@ This is the Git repo for a docker wordpress environment.
 ```
 git clone https://github.com/ground-creative/docker-wordpress.git {folder-name}
 ```
-2) Rename sample.env to .env and the required changes
+2) Rename sample.env to .env and the make the required changes
 
 3) Run build.sh script to build containers
 ```
