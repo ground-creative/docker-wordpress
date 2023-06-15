@@ -4,6 +4,10 @@
 # ignore all ini files
 *.ini
 
+# ignore these files
+docker-compose.override.yml
+.env
+
 # exclude everything in www
 www/*
 !www/README.md
