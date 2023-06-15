@@ -4,7 +4,7 @@ This is the Git repo for a docker wordpress environment.
 
 ## Installation
 
-1) clone the repository
+1) Clone the repository
 ```
 git clone https://github.com/ground-creative/docker-wordpress.git {folder-name}
 ```
@@ -43,3 +43,7 @@ upload_max_filesize = 64M
 post_max_size = 64M
 max_execution_time = 600
 ```
+
+## Use with nginx ssl proxy
+
+https://github.com/ground-creative/docker-nginx-proxy
