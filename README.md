@@ -2,6 +2,9 @@
 
 This is the Git repo for a docker wordpress environment.
 
+## Dependencies
+I believe on ly docker and docker-compose are required.
+
 ## Installation
 
 1) Clone the repository
