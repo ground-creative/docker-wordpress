@@ -33,12 +33,15 @@ sudo nano /etc/hosts
 	
 ## Uploads.ini file example
 
-Add the volume to the docker-compose.yml file
+1) Create the file docker-compose-override.yml and paste the following
 ```
  volumes:
+    - ./www:/var/www/html
+    - ./logs/wp-debug.log:/var/www/html/wp-content/wp-debug.log
 	- ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 ```
-Create a file called uploads.ini with the following content and place it in the config folder
+
+2) Create a file called uploads.ini with the following content and place it in the config folder
 ```
 file_uploads = On
 memory_limit = 64M
@@ -67,7 +70,7 @@ services:
     expose:
       - "80"
     environment:
-	  # change email address value
+# change email address value
       VIRTUAL_HOST: ${WP_CONTAINER_NAME}
       VIRTUAL_PORT: 80
       LETSENCRYPT_HOST: ${WP_CONTAINER_NAME}
